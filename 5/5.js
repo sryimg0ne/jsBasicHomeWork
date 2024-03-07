@@ -28,11 +28,9 @@ function maxWithIf(num1, num2){
 }
 console.log(maxWithIf(2,2));
 //2 рівень
-function pow(x , n){
+function pow(x = 9 , n){
     if(n == 0){
         return 1;
-    }else if(x == null){
-        return 9;
     }
     let powNumber = x;
     for (let i = 1; i < n; ++i){
@@ -53,18 +51,19 @@ function sumOrConcatination(value1 = 15, value2 = 15){
 }
 sumOrConcatination();
 //3 рівень 
-function fib(n){
+function fib(n = "Ви нічого не ввели"){
     let a = 1;
     let b = 1;
     let result = 0;
-    if (n == 1){
+    if (n == 1 || n == 2){
         return 1;
-    }else if(n == 2){
-        return 3;
-    }else if(n == 0 || typeof n == "string"){
+    }else if(n == 3){
+        return 2;
+    }else if(n === "Ви нічого не ввели"){
+        return n;
+    }
+    else if(n == 0 || typeof n == "string"){
         return "Ви ввели неправильне число ";
-    }else if (n == null){
-        return "Ви нічого не ввели";
     }else{
     for(let i = 3; i <= n; i++){
         result = a + b;
@@ -74,6 +73,6 @@ function fib(n){
     return result
 }
 }
-console.log(fib(9))
+console.log(fib());
 
 
