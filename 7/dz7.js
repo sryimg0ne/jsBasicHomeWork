@@ -78,14 +78,8 @@ const person1 = {
      country: "USA"
     }
    };
-   let{name, age} = person1;
-   console.log(name, age);
-   let{job: currentJob} = person1;
-   console.log(currentJob);
-   let{address: {city}} = person1;
-   console.log(city);
-   let{address: {country: currentCountry}} = person1;
-   console.log(currentCountry);
+   let{name, age, job: currentJob, address: {city}, address: {country: currentCountry}} = person1;
+   console.log(name, age, currentJob, city, currentCountry);
    //7
    let books = {
     countries: [
@@ -148,8 +142,15 @@ const person1 = {
    }
    let{countries: [{authors: [{books: [firstBook, , thirdBook]}]}]} = books;
    console.log(firstBook, thirdBook);
-   let{countries: [, {authors: [{books: [, secondBook]}] }]} = books;
-   console.log(secondBook);
+   let{countries: [, {authors: [{books: [, {title: secondKidrukBook}]}]}]} = books;
+   console.log(secondKidrukBook);
    let{countries: [, {authors: [, {books: [{year: yearOfPublicationKobzar}]}]}]} = books;
    console.log(yearOfPublicationKobzar);
    
+   //це я для себе 
+   let{countries: [, {authors: [, {books: [{genre: genreOfShevchenkoBook}]}]}]} = books;
+   console.log(genreOfShevchenkoBook);
+   let{countries: [, {authors: [{books: [,{year: yearOfSecondKidrukBoos}]}]}]} = books;
+   console.log(yearOfSecondKidrukBoos);
+   let{countries: [, {authors: [{books: [{title: nameOfFirstKidrukBook}]}]}]} = books;
+   console.log(nameOfFirstKidrukBook);
