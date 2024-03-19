@@ -50,7 +50,7 @@ function unUnique(arr) {
 
         if (numCount[num] > maxCount || (numCount[num] === maxCount && num > mostDuplicated)) {
             maxCount = numCount[num];
-            mostFrequentDuplicated = num;
+            mostDuplicated = num;
         }
     }
 
