@@ -39,6 +39,7 @@ return uniqueWords;
 let array = ["материк", "мошкара", "апельсин", "спанієль", "мінотавр", "ромашка", "норматив", "метрика"];
 console.log(aclean(array));
 //4 завдання
+
 const books = {
     fantastic: {
      "Френк Герберт": [
@@ -115,3 +116,28 @@ const books = {
      ],
     },
    };
+   books[Symbol.iterator] = function(){
+    let filmNames = [];
+    let i = 0;
+    for (const key in this) {
+        const authors = this[key];
+        for (const author in authors) {
+            authors[author].forEach((item) => {
+                filmNames.push(item.title);
+            });
+    }
+    return {
+        next(){
+            if(i < filmNames.length){
+                return{value: filmNames[i++], done: false}
+            }
+
+            return{done: true}
+            
+        }
+    }
+   }
+   }
+   for (const iterator of books) {
+    console.log(iterator);
+}
