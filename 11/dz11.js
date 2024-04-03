@@ -21,8 +21,6 @@ for(const key in Admin){
 //2
 //я не зовсім розумію що таке Viacle, але якщо це vehicle то Vehicle це прототип, а від нього наслідується bycicle, а від bycicle наслідується Car
 let vehicle = {
-    name: "",
-    speed: "",
     ride(){
         console.log(`Їду на ${this.name} зі швидкістю ${this.speed}`)
     },

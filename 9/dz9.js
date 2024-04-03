@@ -1,20 +1,20 @@
-let mapWihEverything = new Map();
-mapWihEverything.set("name", "Ivan");
-mapWihEverything.set("film", "Fight Club");
-mapWihEverything.set("book", "1984");
-mapWihEverything.set("sport", "volleyball");
-mapWihEverything.set("animation", "Shrek");
-mapWihEverything.set("number", 123);
-mapWihEverything.set("game", "DOTA 2");
-mapWihEverything.set("phone", "IPhone");
-console.log(mapWihEverything);
-mapWihEverything.forEach((key, value) => {
+let map = new Map([
+    [true, "boolean"],
+    [123, "number"],
+    ["hello", "string"],
+    [[1, 2, 3], "array"],
+    [{}, "object"],
+    [null, "null"],
+    [undefined, "undefined"],
+    [Symbol("key"), "symbol"]
+]);
+map.forEach((key, value) => {
     console.log(key, value);
 });
-let objectFromEntries = Object.fromEntries(mapWihEverything);
-mapWihEverything = objectFromEntries;
-console.log(mapWihEverything);
-let map2 = Object.entries(mapWihEverything);
+let objectFromEntries = Object.fromEntries(map);
+map = objectFromEntries;
+console.log(map);
+let map2 = Object.entries(map);
 console.log(map2);
 //2 частина
 function mergeArrays(...arr){
