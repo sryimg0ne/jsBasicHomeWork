@@ -11,7 +11,8 @@ console.log(mapWihEverything);
 mapWihEverything.forEach((key, value) => {
     console.log(key, value);
 });
-mapWihEverything = Object.fromEntries(mapWihEverything);
+let objectFromEntries = Object.fromEntries(mapWihEverything);
+mapWihEverything = objectFromEntries;
 console.log(mapWihEverything);
 let map2 = Object.entries(mapWihEverything);
 console.log(map2);
@@ -22,8 +23,9 @@ function mergeArrays(...arr){
     mergeArray.push(...arr[i]);
 }
     let set1 = new Set(mergeArray);
-    return set1;
+    return Array.from(set1);
 }
+
 console.log(mergeArrays([1, 2, 3, 4, 5], [5, 6]));
 //3 завдання 
 function aclean(arr){
